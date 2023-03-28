@@ -1,0 +1,25 @@
+<!--template with results argument-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+
+    <!--export form button-->
+    <form action="/export" method="post">
+        <ul>
+            <!--checkbox for each result-->
+            {% for result in results %}
+            <li><input type="checkbox" name="checkbox_{{result}}"  id="checkbox_{{result}}">{{result}} {{results[result].frequency}}</li>
+            <!--tag with   result.freq-->
+            
+          
+        {% endfor %}
+        </ul>
+        <input type="submit" value="Export">
+    </form>
+
+</body>
+</html>
